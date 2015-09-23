@@ -1,0 +1,25 @@
+{
+  "name": "checkthisbottle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kb8228/check_this_bottle.git"
+  },
+  "author": "Ksenia Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kb8228/check_this_bottle/issues"
+  },
+  "homepage": "https://github.com/kb8228/check_this_bottle#readme",
+  "dependencies": {
+    "bluebird": "^2.10.1",
+    "express": "^4.13.3",
+    "request": "^2.63.0"
+  }
+}
