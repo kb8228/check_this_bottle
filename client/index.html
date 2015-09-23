@@ -6,14 +6,8 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Check This Bottle</title>
   <!-- AngularJS -->
-  <script src="../bower_components/angular/angular.js"></script>
-  <script src="../bower_components/angular-route/angular-route.js"></script>
-
-  <!-- Firebase -->
-  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-  <!-- AngularFire -->
-  <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-  <!-- UI Router -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/wineController.js"></script>
 </head>
@@ -24,26 +18,27 @@
     <div class="center">
       <form class="pure-form" name="wineForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
         <fieldset>
-          <input class="pure-input-1-2" name="maker" type="text" ng-model="wines.maker" placeholder="producer or vineyard" required>
+          <input class="pure-input-1" name="maker" type="text" ng-model="wines.maker" placeholder="Producer or Vineyard" required>
           <p>&</p>
-          <input class="pure-input-1-2" name="varietal" type="text" ng-model="wines.varietal" placeholder="varietal or name" required>
+          <input class="pure-input-1" name="varietal" type="text" ng-model="wines.varietal" placeholder="Name and/or Varietal and/or Year" required>
         </fieldset>
-        <button class="pure-button" type="submit" ng-disabled="wineForm.$invalid">Get info!</button>
+        <button class="pure-button purpleBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">Get info!</button>
       </form>  
     </div>
     <!-- RESULTS LIST -->
     <div ng-if="wines.results.length">
-      <p class="bold olive">Results:</p>
+      <hr/>
+      <h2 class="bold gray">Results:</h2>
       <ul class="list" ng-repeat="wine in wines.results">
         <li>
           <p class="bold">{{wine.name}}</p>
-          <img src="{{wine.label}}">
+          <img ng-src="{{wine.label}}">
           <p class="bold">Score: {{ wine.score || "n/a"}}</p>
           <p>Price: {{ wine.price}}</p>
           <hr/>
         </li>
       </ul> 
-      <a href="#" class="pure-button">Search again</a>
+      <a href="#" class="pure-button purpleBg whiteTxt">Search again</a>
     </div>
   </div> <!-- CONTAINER ENDs -->
 </body>

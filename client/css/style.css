@@ -1,14 +1,23 @@
+body{
+  height: 100vh;
+  background: url("bgnd.jpg") bottom no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
 hr {
-  padding-top: 15px;
+  margin-top: 35px;
   width: 90%;
   border: none;
-  border-bottom: 1px solid pink;
+  border-bottom: 1px solid gray;
 }
 
 .container {
-  max-width: 500px;
+  background-color: rgba(255,255,255,0.6);
+  width: 90%;
+  min-width: 320px;
   margin: 0 auto;
-  padding: 25px 5px 50px;
+  padding: 25px 25px 50px;
   text-align: center;
 }
 
@@ -29,6 +38,14 @@ hr {
   margin: 15px auto;
 }
 
-.olive {
-  color: olivedrab;
+.gray {
+  color: gray;
+}
+
+.purpleBg {
+  background-color: purple;
+}
+
+.whiteTxt {
+  color: white;
 }

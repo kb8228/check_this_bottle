@@ -14,6 +14,8 @@ function WineController ($http) {
 
   self.getInfo = function(){
     makeQuery(self.maker, self.varietal);
+    self.maker = null;
+    self.varietal = null;
   }
 
   function makeQuery(){
