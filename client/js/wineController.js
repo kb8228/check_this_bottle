@@ -5,7 +5,7 @@ WineController.inject = ['$http'];
 
 function WineController ($http) {
   var self = this;
-  var base_url = process.env.PORT + '/api/';
+  var base_url = '/api/';
   var api_key = '';
 
   self.maker;
