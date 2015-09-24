@@ -5,7 +5,7 @@ WineController.inject = ['$http'];
 
 function WineController ($http) {
   var self = this;
-  var base_url = 'https://young-refuge-3676.herokuapp.com/api/';
+  var base_url = process.env.PORT + '/api/';
   var api_key = '';
 
   self.maker;
