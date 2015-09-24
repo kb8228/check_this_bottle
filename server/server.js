@@ -21,7 +21,7 @@ app.get('/', function(req, res){
 app.get('/api/*', function(req, res){
   var query = req.url.replace('/api/', '');
   // console.log("query: ", query);
-  request(API_BASE+query+'&apikey='+ENV[KEY], function(err, response, body){
+  request(API_BASE+query+'&apikey='+ENV['KEY'], function(err, response, body){
     // console.log("body that came back: ", body);
     res.send(body);
   });
