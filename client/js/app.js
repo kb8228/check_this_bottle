@@ -1,4 +1,5 @@
-angular.module('wineApp', ['ngRoute'])
+(function(){
+  angular.module('wineApp', ['ngRoute'])
   .config(['$routeProvider', '$httpProvider', 
     function ($routeProvider, $httpProvider) {
       $routeProvider
@@ -10,4 +11,5 @@ angular.module('wineApp', ['ngRoute'])
       .otherwise({
         redirectTo: '/'
       });
-  }]);
+  }]); 
+})();
