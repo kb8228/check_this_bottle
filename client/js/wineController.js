@@ -1,8 +1,6 @@
 (function(){
   angular.module('wineApp')
-  .controller('WineController', WineController);
-
-  WineController.inject = ['$http'];
+  .controller('WineController', ['$http', WineController]);
 
   function WineController ($http) {
     var self = this;
