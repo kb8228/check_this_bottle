@@ -1,13 +1,13 @@
-angular.module('wineApp', ['ngRoute']).
-  config(['$routeProvider', '$httpProvider', 
-    function($routeProvider, $httpProvider) {
+angular.module('wineApp', ['ngRoute'])
+  .config(['$routeProvider', '$httpProvider', 
+    function ($routeProvider, $httpProvider) {
       $routeProvider
-        .when('/', {
-          templateUrl: 'index.html',
-          controller: 'WineController',
-          controllerAs: 'winesCtrl'
-        })
-        .otherwise({
-          redirectTo: '/'
-        });
-    }]);
+      .when('/', {
+        templateUrl: 'index.html',
+        controller: 'WineController',
+        controllerAs: 'winesCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  }]);
