@@ -34,6 +34,7 @@
         }
       })
       .then(function(res){
+        console.log("response data: ", res.data);
         res.data.Products.List.forEach(function(wine){
           self.results.push({
             maker: wine.Vineyard.Name,
@@ -46,7 +47,7 @@
             price: '$' + wine.PriceMin + " - $" + wine.PriceMax
           });
         });
-        console.log(self.results);
+        console.log("results: ", self.results);
       })
       .catch(function(err){
         console.log(err);

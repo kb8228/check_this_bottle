@@ -1,8 +1,17 @@
 body{
   height: 100vh;
-  background: url("bgnd.jpg") bottom no-repeat;
+  width: 100%;
+/*  background: url("bgnd.jpg") bottom no-repeat;
   background-size: 100%;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
+  background-color: #FFFCF6;
+  font-family: 'Karma', serif;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 2.25em;
 }
 
 hr {
@@ -12,13 +21,30 @@ hr {
   border-bottom: 1px solid gray;
 }
 
+.poiret {
+  font-family: 'Poiret One', cursive;
+  color: maroon;
+}
+
+
 .container {
-  background-color: rgba(255,255,255,0.6);
+  box-sizing: border-box;
+  height: 100%;
   width: 90%;
   min-width: 320px;
+  max-width: 500px;
   margin: 0 auto;
-  padding: 25px 25px 50px;
+  padding: 25px;
   text-align: center;
+}
+
+.content {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 25px;
+  height: 100%;
+  border: thin solid #E3D8D2;
+  border-radius: 5px;
 }
 
 .center {
@@ -42,8 +68,8 @@ hr {
   color: gray;
 }
 
-.purpleBg {
-  background-color: purple;
+.dkRedBg {
+  background-color: maroon;
 }
 
 .whiteTxt {

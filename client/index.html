@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Karma:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Check This Bottle</title>
   <!-- AngularJS -->
@@ -13,32 +15,34 @@
 </head>
 <body ng-controller="WineController as wines">
   <div class="container"> <!-- CONTAINER -->
-    <h1>Check This Bottle</h1>
-    <!-- SEARCH FORM -->
-    <div class="center">
-      <form class="pure-form" name="wineForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
-        <fieldset>
-          <input class="pure-input-1" name="maker" type="text" ng-model="wines.maker" placeholder="Producer or Vineyard" required>
-          <p>&</p>
-          <input class="pure-input-1" name="varietal" type="text" ng-model="wines.varietal" placeholder="Name and/or Varietal and/or Year" required>
-        </fieldset>
-        <button class="pure-button purpleBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">Get info!</button>
-      </form>  
-    </div>
-    <!-- RESULTS LIST -->
-    <div ng-if="wines.results.length">
-      <hr/>
-      <h2 class="bold gray">Results:</h2>
-      <ul class="list" ng-repeat="wine in wines.results">
-        <li>
-          <p class="bold">{{wine.name}}</p>
-          <img ng-src="{{wine.label}}">
-          <p class="bold">Score: {{ wine.score || "n/a"}}</p>
-          <p>Price: {{ wine.price}}</p>
-          <hr/>
-        </li>
-      </ul> 
-      <a href="#" class="pure-button purpleBg whiteTxt">Search again</a>
+      <div class="content">
+      <h1 class="poiret">Check This Bottle</h1>
+      <!-- SEARCH FORM -->
+      <div class="center">
+        <form class="pure-form" name="wineForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
+          <fieldset>
+            <input class="pure-input-1" name="maker" type="text" ng-model="wines.maker" placeholder="Producer or Vineyard" required>
+            <p>&</p>
+            <input class="pure-input-1" name="varietal" type="text" ng-model="wines.varietal" placeholder="Name and/or Varietal and/or Year" required>
+          </fieldset>
+          <button class="pure-button dkRedBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">Get info!</button>
+        </form>  
+      </div>
+      <!-- RESULTS LIST -->
+      <div ng-if="wines.results.length">
+        <hr/>
+        <h2 class="bold gray">Results:</h2>
+        <ul class="list" ng-repeat="wine in wines.results">
+          <li>
+            <p class="bold">{{wine.name}}</p>
+            <img ng-src="{{wine.label}}">
+            <p class="bold">Score: {{ wine.score || "n/a"}}</p>
+            <p>Price: {{ wine.price}}</p>
+            <hr/>
+          </li>
+        </ul> 
+        <a href="#" class="pure-button purpleBg whiteTxt">Search again</a>
+      </div>
     </div>
   </div> <!-- CONTAINER ENDs -->
 </body>
