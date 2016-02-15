@@ -21,9 +21,9 @@
       <div class="center">
         <form class="pure-form" name="wineForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
           <fieldset>
-            <input class="pure-input-1" name="maker" type="text" ng-model="wines.maker" placeholder="Producer or Vineyard" required>
+            <input class="pure-input-1" name="maker" type="text" ng-model="wines.maker" ng-keypress="{13: wines.doBlur($event)}" placeholder="Producer or Vineyard" required>
             <p>&</p>
-            <input class="pure-input-1" name="varietal" type="text" ng-model="wines.varietal" placeholder="Name and/or Varietal and/or Year" required>
+            <input class="pure-input-1" name="varietal" type="text" ng-model="wines.varietal" ng-keypress="{13: wines.doBlur($event)}" placeholder="Name and/or Varietal and/or Year" required>
           </fieldset>
           <button class="pure-button btn dkRedBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">Get info!</button>
         </form>  

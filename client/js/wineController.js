@@ -11,6 +11,12 @@
     self.varietal;
     self.results = [];
 
+    self.doBlur = function($event){
+      if($event.which == 13) {
+        $event.target.blur();
+      }
+    }
+
     self.getInfo = function(){
       makeQuery(self.maker, self.varietal);
       self.maker = null;
