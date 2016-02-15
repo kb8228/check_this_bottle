@@ -21,6 +21,13 @@ hr {
   border-bottom: 1px solid gray;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 .poiret {
   font-family: 'Poiret One', cursive;
   color: maroon;
@@ -41,6 +48,7 @@ hr {
 .content {
   background-color: white;
   box-sizing: border-box;
+  overflow: scroll;
   padding: 25px;
   height: 100%;
   border: thin solid #E3D8D2;
@@ -74,4 +82,9 @@ hr {
 
 .whiteTxt {
   color: white;
+}
+
+.btn {
+  border-radius: 5px;
+  font-size: 1.1em;
 }
