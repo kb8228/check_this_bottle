@@ -6,7 +6,7 @@ body{
   background-attachment: fixed;*/
   background-color: #FFFCF6;
   font-family: 'Karma', serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1em;
 }
 
@@ -43,11 +43,6 @@ input:-webkit-autofill:active {
   color: maroon;
 }
 
-.bold {
-  font-weight: bold;
-}
-
-
 .container {
   box-sizing: border-box;
   height: 100%;
@@ -83,7 +78,7 @@ input:-webkit-autofill:active {
 .bold {
   font-size: 1.35em;
   font-weight: bold;
-  margin: 15px auto;
+  margin: 5px auto;
 }
 
 .gray {
@@ -99,6 +94,7 @@ input:-webkit-autofill:active {
 }
 
 .btn {
+  margin-top: 10px;
   padding: 7px 10px 5px;
   border-style: none;
   border-radius: 5px;
