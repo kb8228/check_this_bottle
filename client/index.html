@@ -19,13 +19,13 @@
       <h1 class="poiret">Check This Bottle</h1>
       <!-- SEARCH FORM -->
       <div class="center">
-        <form class="pure-form" name="wineForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
+        <form name="wineForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
           <fieldset>
-            <input class="pure-input-1" name="maker" type="text" ng-model="wines.maker" ng-keypress="{13: wines.doBlur($event)}" placeholder="Producer or Vineyard" required>
-            <p>&</p>
-            <input class="pure-input-1" name="varietal" type="text" ng-model="wines.varietal" ng-keypress="{13: wines.doBlur($event)}" placeholder="Name and/or Varietal and/or Year" required>
+            <input name="maker" type="text" ng-model="wines.maker" ng-keypress="{13: wines.doBlur($event)}" placeholder="producer / vineyard" required>
+            <p class="poiret bold">&</p>
+            <input name="varietal" type="text" ng-model="wines.varietal" ng-keypress="{13: wines.doBlur($event)}" placeholder="name / varietal / year" required>
           </fieldset>
-          <button class="pure-button btn dkRedBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">Get info!</button>
+          <button class="btn dkRedBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">Get info!</button>
         </form>  
       </div>
       <!-- RESULTS LIST -->

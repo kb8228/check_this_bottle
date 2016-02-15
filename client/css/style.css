@@ -21,6 +21,16 @@ hr {
   border-bottom: 1px solid gray;
 }
 
+fieldset {
+  border-style: none;
+}
+input {
+  width: 100%;
+  text-align: center;
+  border-style: none;
+  border-bottom: thin solid lightgray;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -33,11 +43,15 @@ input:-webkit-autofill:active {
   color: maroon;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 
 .container {
   box-sizing: border-box;
   height: 100%;
-  width: 90%;
+  /*width: 90%;*/
   min-width: 320px;
   max-width: 500px;
   margin: 0 auto;
@@ -85,6 +99,24 @@ input:-webkit-autofill:active {
 }
 
 .btn {
+  padding: 7px 10px 5px;
+  border-style: none;
   border-radius: 5px;
   font-size: 1.1em;
 }
+.btn:disabled {
+  opacity: 0.5;
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75em;
+    margin: 0 auto 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
