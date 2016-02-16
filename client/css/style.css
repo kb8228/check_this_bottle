@@ -31,15 +31,16 @@ input {
   border-bottom: thin solid lightgray;
 }
 
-#maker,
-#maker:hover,
-#maker:focus,
-#maker:active,
-#varietal,
-#varietal:hover,
-#varietal:focus,
-#varietal:active {
-  transition: background-color 5000s ease-in-out 0s;
+#maker:-webkit-autofill,
+#maker:-webkit-autofill:hover,
+#maker:-webkit-autofill:focus,
+#maker:-webkit-autofill:active,
+#varietal:-webkit-autofill,
+#varietal:-webkit-autofill:hover,
+#varietal:-webkit-autofill:focus,
+#varietal:-webkit-autofill:active {
+    /*transition: background-color 5000s ease-in-out 0s;*/
+    background-color: white !important;
 }
 
 .poiret {
