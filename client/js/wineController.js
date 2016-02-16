@@ -9,7 +9,39 @@
 
     self.maker;
     self.varietal;
-    self.results = [];
+    self.results = [
+      {
+        appellation: "Other California",
+        label: "http://cache.wine.com/labels/111890m.jpg",
+        maker: "Bogle Vineyards",
+        name: "Bogle Chardonnay 2010",
+        price: "$10.29 - $12.29",
+        region: "California",
+        score: 89,
+        varietal: "Chardonnay"
+      },
+      {
+        appellation: "Other California",
+        label: "http://cache.wine.com/labels/134749m.jpg",
+        maker: "Bogle Vineyards",
+        name: "Bogle Chardonnay 2013",
+        price: "$8.99 - $9.99",
+        region: "California",
+        score: 89,
+        varietal: "Chardonnay"
+      },
+      {
+        appellation: "Other California",
+        label: "http://cache.wine.com/labels/125157m.jpg",
+        maker: "Bogle Vineyards",
+        name: "Bogle Chardonnay 2012",
+        price: "$9.99 - $10.99",
+        region: "California",
+        score: 88,
+        varietal: "Chardonnay"
+      }
+    ];
+
     self.loading = false;
     self.showForm = true;
 
@@ -19,11 +51,13 @@
       }
     }
 
+    self.clearResults = function(){
+      self.results = [];
+    }
+
     self.getInfo = function(){
       if(self.results.length){
-        angular.forEach(self.results, function(wine){
-          delete wine;
-        });
+        self.clearResults();
       }
       makeQuery(self.maker, self.varietal);
       self.maker = null;
@@ -48,9 +82,7 @@
         }
       })
       .then(function(res){
-        // console.log("response data: ", res.data);
         self.loading = false;
-        self.showForm = false;
         res.data.Products.List.forEach(function(wine){
           self.results.push({
             maker: wine.Vineyard.Name,

@@ -10,10 +10,10 @@
 </head>
 <body ng-controller="WineController as wines">
   <div class="container"> <!-- CONTAINER -->
-      <div class="content">
+    <div class="content">
       <h1 class="poiret">Check This Bottle</h1>
       <!-- SEARCH FORM -->
-      <form name="wineForm" ng-show="wines.showForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
+      <form name="wineForm" ng-show="!wines.results.length" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
         <fieldset>
           <input name="maker" type="text" ng-model="wines.maker" ng-keypress="{13: wines.doBlur($event)}" placeholder="producer / vineyard" required>
           <p class="poiret bold">&</p>
@@ -24,7 +24,6 @@
       <!-- RESULTS LIST -->
       <div class="loader" ng-show="wines.loading"><img src="https://www.cirruseo.com/statics/images/spinner.gif"></div>
       <div ng-if="wines.results.length">
-        <hr/>
         <h2 class="bold gray">Results:</h2>
         <ul class="list" ng-repeat="wine in wines.results">
           <li>
@@ -35,7 +34,7 @@
             <hr/>
           </li>
         </ul> 
-        <a href="#" class="btn whiteTxt" ng-click="wines.openForm()">Search again</a>
+        <button type="button" class="btn gray" ng-click="wines.clearResults()">Search again</button>
       </div>
     </div>
   </div> <!-- CONTAINER ENDs -->
