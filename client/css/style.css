@@ -31,16 +31,11 @@ input {
   border-bottom: thin solid lightgray;
 }
 
-#maker:-webkit-autofill,
-#maker:-webkit-autofill:hover,
-#maker:-webkit-autofill:focus,
-#maker:-webkit-autofill:active,
-#varietal:-webkit-autofill,
-#varietal:-webkit-autofill:hover,
-#varietal:-webkit-autofill:focus,
-#varietal:-webkit-autofill:active {
-    /*transition: background-color 5000s ease-in-out 0s;*/
-    background-color: white !important;
+input[type=text]:-webkit-autofill,
+input[type=text]:-webkit-autofill:hover,
+input[type=text]:-webkit-autofill:focus,
+input[type=text]:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .poiret {
