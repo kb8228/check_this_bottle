@@ -36,6 +36,7 @@ input[type=text]:-webkit-autofill:hover,
 input[type=text]:-webkit-autofill:focus,
 input[type=text]:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
+  box-shadow: 0 0 0px 1000px white inset;
 }
 
 .poiret {
