@@ -13,16 +13,14 @@
       <div class="content">
       <h1 class="poiret">Check This Bottle</h1>
       <!-- SEARCH FORM -->
-      <div class="center">
-        <form name="wineForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
-          <fieldset>
-            <input name="maker" type="text" ng-model="wines.maker" ng-keypress="{13: wines.doBlur($event)}" placeholder="producer / vineyard" required>
-            <p class="poiret bold">&</p>
-            <input name="varietal" type="text" ng-model="wines.varietal" ng-keypress="{13: wines.doBlur($event)}" placeholder="name / varietal / year" required>
-          </fieldset>
-          <button class="btn dkRedBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">look up</button>
-        </form>  
-      </div>
+      <form name="wineForm" ng-show="wines.showForm" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
+        <fieldset>
+          <input name="maker" type="text" ng-model="wines.maker" ng-keypress="{13: wines.doBlur($event)}" placeholder="producer / vineyard" required>
+          <p class="poiret bold">&</p>
+          <input name="varietal" type="text" ng-model="wines.varietal" ng-keypress="{13: wines.doBlur($event)}" placeholder="name / varietal / year" required>
+        </fieldset>
+        <button class="btn dkRedBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">look up</button>
+      </form>  
       <!-- RESULTS LIST -->
       <div class="loader" ng-show="wines.loading"><img src="https://www.cirruseo.com/statics/images/spinner.gif"></div>
       <div ng-if="wines.results.length">
@@ -37,7 +35,7 @@
             <hr/>
           </li>
         </ul> 
-        <a href="#" class="pure-button purpleBg whiteTxt">Search again</a>
+        <a href="#" class="btn whiteTxt" ng-click="wines.openForm()">Search again</a>
       </div>
     </div>
   </div> <!-- CONTAINER ENDs -->

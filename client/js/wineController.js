@@ -2,7 +2,7 @@
   angular.module('wineApp')
   .controller('WineController', ['$http', WineController]);
 
-  function WineController ($http) {
+  function WineController($http){
     var self = this;
     var base_url = '/api/';
     var api_key = '';
@@ -11,6 +11,7 @@
     self.varietal;
     self.results = [];
     self.loading = false;
+    self.showForm = true;
 
     self.doBlur = function($event){
       if($event.which == 13) {
@@ -19,6 +20,11 @@
     }
 
     self.getInfo = function(){
+      if(self.results.length){
+        angular.forEach(self.results, function(wine){
+          delete wine;
+        });
+      }
       makeQuery(self.maker, self.varietal);
       self.maker = null;
       self.varietal = null;
@@ -44,6 +50,7 @@
       .then(function(res){
         // console.log("response data: ", res.data);
         self.loading = false;
+        self.showForm = false;
         res.data.Products.List.forEach(function(wine){
           self.results.push({
             maker: wine.Vineyard.Name,
@@ -64,5 +71,8 @@
       });
     } // makeQuery END
 
+    self.openForm = function(){
+      self.showForm = true;
+    }
   } // WineController END
 })(); // IIFE END
