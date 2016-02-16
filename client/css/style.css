@@ -31,11 +31,15 @@ input {
   border-bottom: thin solid lightgray;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
+#maker,
+#maker:hover,
+#maker:focus,
+#maker:active,
+#varietal,
+#varietal:hover,
+#varietal:focus,
+#varietal:active {
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .poiret {

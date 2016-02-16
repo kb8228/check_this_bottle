@@ -15,15 +15,15 @@
       <!-- SEARCH FORM -->
       <form name="wineForm" ng-show="!wines.results.length" ng-submit="wines.getInfo(wineForm.$valid)" novalidate>
         <fieldset>
-          <input name="maker" type="text" ng-model="wines.maker" ng-keypress="{13: wines.doBlur($event)}" placeholder="producer / vineyard" required>
+          <input id="maker" name="maker" type="text" ng-model="wines.maker" ng-keypress="{13: wines.doBlur($event)}" placeholder="producer / vineyard" required>
           <p class="poiret bold">&</p>
-          <input name="varietal" type="text" ng-model="wines.varietal" ng-keypress="{13: wines.doBlur($event)}" placeholder="name / varietal / year" required>
+          <input id="varietal" name="varietal" type="text" ng-model="wines.varietal" ng-keypress="{13: wines.doBlur($event)}" placeholder="name / varietal / year" required>
         </fieldset>
         <button class="btn dkRedBg whiteTxt" type="submit" ng-disabled="wineForm.$invalid">look up</button>
       </form>  
       <!-- RESULTS LIST -->
       <div class="loader" ng-show="wines.loading"><img src="https://www.cirruseo.com/statics/images/spinner.gif"></div>
-      <div ng-if="wines.results.length">
+      <div ng-show="wines.results.length" ng-cloak>
         <h2 class="bold gray">Results:</h2>
         <ul class="list" ng-repeat="wine in wines.results">
           <li>
