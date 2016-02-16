@@ -10,6 +10,7 @@
     self.maker;
     self.varietal;
     self.results = [];
+    self.loading = false;
 
     self.doBlur = function($event){
       if($event.which == 13) {
@@ -21,6 +22,7 @@
       makeQuery(self.maker, self.varietal);
       self.maker = null;
       self.varietal = null;
+      self.loading = true;
     }
 
     function makeQuery(){
@@ -40,7 +42,8 @@
         }
       })
       .then(function(res){
-        console.log("response data: ", res.data);
+        // console.log("response data: ", res.data);
+        self.loading = false;
         res.data.Products.List.forEach(function(wine){
           self.results.push({
             maker: wine.Vineyard.Name,
@@ -56,6 +59,7 @@
         console.log("results: ", self.results);
       })
       .catch(function(err){
+        self.loading = false;
         console.log(err);
       });
     } // makeQuery END

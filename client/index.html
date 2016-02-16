@@ -24,6 +24,7 @@
         </form>  
       </div>
       <!-- RESULTS LIST -->
+      <div class="loader" ng-show="wines.loading"><img src="https://www.cirruseo.com/statics/images/spinner.gif"></div>
       <div ng-if="wines.results.length">
         <hr/>
         <h2 class="bold gray">Results:</h2>
