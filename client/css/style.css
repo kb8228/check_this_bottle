@@ -78,7 +78,7 @@ input[type=text]:-webkit-autofill:active {
 .bold {
   font-size: 1.35em;
   font-weight: bold;
-  margin: 5px auto;
+  margin: 5px auto 0;
 }
 
 .gray {
@@ -109,6 +109,30 @@ input[type=text]:-webkit-autofill:active {
   width: 75px;
   margin: 0 auto;
   -webkit-filter: grayscale(35%);
+}
+
+.wine-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.make-fave,
+.fave {
+  width: 20px;
+  height: 20px;
+  /*float: right;*/
+}
+
+.make-fave {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='76px' height='65px' viewBox='0 0 76 65' xml:space='preserve'><circle cx='20' cy='20' r='20' fill='lightgray'/><circle cx='55' cy='20' r='20' fill='lightgray'/><polygon points='5,33 42,20 70,33 38,65' fill='lightgray'/></svg>") no-repeat center;
+  background-size: contain;
+}
+
+.make-fave:hover,
+.fave {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='76px' height='65px' viewBox='0 0 76 65' xml:space='preserve'><circle cx='20' cy='20' r='20' fill='darkred'/><circle cx='55' cy='20' r='20' fill='darkred'/><polygon points='5,33 42,20 70,33 38,65' fill='darkred'/></svg>") no-repeat center;
+  background-size: contain;
 }
 
 @media (max-width: 480px) {

@@ -27,7 +27,10 @@
         <h2 class="bold gray">Results:</h2>
         <ul class="list" ng-repeat="wine in wines.results">
           <li>
-            <p class="bold">{{wine.name}}</p>
+            <div class="wine-title">
+              <p class="bold">{{wine.name}}</p>
+              <div class="make-fave"></div>
+            </div>
             <img ng-src="{{wine.label}}">
             <p class="bold">Score: {{ wine.score || "n/a"}}</p>
             <p>Price: {{ wine.price}}</p>

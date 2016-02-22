@@ -14,15 +14,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/', function(req, res){
-  res.sendFile('/index.html');
-});
-
 app.get('/api/*', function(req, res){
   var query = req.url.replace('/api/', '');
-  // console.log("query: ", query);
   request(API_BASE+query+'&apikey='+process.env.KEY, function(err, response, body){
-    // console.log("body that came back: ", body);
     res.send(body);
   });
 });
